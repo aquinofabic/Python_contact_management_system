@@ -19,7 +19,7 @@ def display_contact():
 
 while True:
     choice = int(input("1. Add new contact \n2. Search contact\n3. Display contact\n4. Edit contact "
-                       "\n5. Delete Contact \nExit \nEnter your choice "))# \n is new line
+                       "\n5. Delete Contact \nEnter your choice "))# \n is new line
     if choice == 1:
         name = input("Enter contact name ")
         phone = input("Enter mobile number ")
@@ -56,12 +56,13 @@ while True:
         if del_contact in contact:
             confirm = input("Do you want to delete this contact, Y/N?\n ")
             if confirm == "y" or confirm == "Y":
-                contact.pop(del_contact)  # .pop removes an item at the specified index from a list
-                # Now, two cases if contact is deleted or not
+                contact.pop(del_contact)
+                # .pop removes an item at the specified index from a list
+                # Don't need to do the case N
                 print(f'{name} has been deleted from your contacts')
         else:
             print("Name cannot be found in the contact book.")
 
     else:
-        break  # break the loop
-"\n"
+        break
+
