@@ -29,7 +29,7 @@ while True:
         # Check contact name and see if it is available in the dictionary
         search_name = input("Enter contact name ")
         if search_name in contact:
-            print(search_name,"'s contact number is ",contact[search_name])
+            print(f"{search_name}'s contact number is {contact[search_name]}")
         else:
             print("Name cannot be found in the contact book.")
 
@@ -44,25 +44,25 @@ while True:
     elif choice == 4:
         edit_contact = input("Edit contact name ")
         if edit_contact in contact:
-            phone = input("Enter mobile number ")
+            phone = input("Enter new mobile number ")
             contact[edit_contact] = phone
-            print("Contact updated.")
-            display_contact()
+            print("Contact number updated.")
         else:
             print("Name cannot be found in the contact book.")
 
     elif choice == 5:
         del_contact = input("Delete contact ")
-        if del_contact in contact:
+        if del_contact not in contact:
+            print("Name cannot be found in the contact book.")
+        else:
             confirm = input("Do you want to delete this contact, Y/N?\n ")
             if confirm == "y" or confirm == "Y":
                 contact.pop(del_contact)
                 # .pop removes an item at the specified index from a list
                 # Don't need to do the case N
                 print(f'{name} has been deleted from your contacts')
-        else:
-            print("Name cannot be found in the contact book.")
 
-    else:
+    elif print("Enter integer values 1 to 5 only."):
         break
+
 
